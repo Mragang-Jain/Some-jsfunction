@@ -1,108 +1,82 @@
 ---
 title: New Beginnings
-date: "2015-05-28T22:40:32.169Z"
-description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
+description: This Blog is written to know somewhat about javascript functions.
 ---
 
-Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-right at the coast of the Semantics, a large language ocean. A small river named
-Duden flows by their place and supplies it with the necessary regelialia.
+The split() method divides a String into an ordered list of substrings, puts these substrings into an array, and returns the array. The division is done by searching for a pattern; where the pattern is provided as the first parameter in the method's call
 
-## On deer horse aboard tritely yikes and much
+## JavaScript Demo: String.split()
 
-The Big Oxmox advised her not to do so, because there were thousands of bad
-Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
-didn’t listen. She packed her seven versalia, put her initial into the belt and
-made herself on the way.
+> const str = 'The quick brown fox jumps over the lazy dog.';
+>
+> const words = str.split(' ');
+> console.log(words[3]);
+> // expected output: "fox"
+>
+> const chars = str.split('');
+> console.log(chars[8]);
+> // expected output: "k"
+>
+> const strCopy = str.split();
+> console.log(strCopy);
+> // expected output: Array ["The quick brown fox jumps over the lazy dog."]
 
-- This however showed weasel
-- Well uncritical so misled
-  - this is very interesting
-- Goodness much until that fluid owl
+The pattern describing where each split should occur. The separator can be a simple string or it can be a regular expression.
 
-When she reached the first hills of the **Italic Mountains**, she had a last
-view back on the skyline of her hometown _Bookmarksgrove_, the headline of
-[Alphabet Village](http://google.com) and the subline of her own road, the Line
-Lane. Pityful a rhetoric question ran over her cheek, then she continued her
-way. On her way she met a copy.
+- The simplest case is when separator is just a single character; this is used to split a delimited string. For example, a string containing tab separated values (TSV) could be parsed by passing a tab character as the separator, like this: myString.split("\t").
+- If separator contains multiple characters, that entire character sequence must be found in order to split.
+- If separator is omitted or does not occur in str, the returned array contains one element consisting of the entire string.
+- If separator appears at the beginning (or end) of the string, it still has the effect of splitting. The result is an empty (i.e. zero length) string, which appears at the first (or last) position of the returned array.
+- If separator is an empty string (""), str is converted to an array of each of its UTF-16 "characters".
 
-### Overlaid the jeepers uselessly much excluding
+### Description
 
-But nothing the copy said could convince her and so it didn’t take long until a
-few insidious Copy Writers ambushed her, made her drunk with
-[Longe and Parole](http://google.com) and dragged her into their agency, where
-they abused her for their projects again and again. And if she hasn’t been
-rewritten, then they are still using her.
+When found, separator is removed from the string, and the substrings are returned in an array.
 
-> Far far away, behind the word mountains, far from the countries Vokalia and
-> Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-> right at the coast of the Semantics, a large language ocean.
+If separator is a regular expression with capturing parentheses, then each time separator matches, the results (including any undefined results) of the capturing parentheses are spliced into the output array.
 
-It is a paradisematic country, in which roasted parts of sentences fly into your
-mouth. Even the all-powerful Pointing has no control about the blind texts it is
-an almost unorthographic life One day however a small line of blind text by the
-name of Lorem Ipsum decided to leave for the far World of Grammar.
+If the separator is an array, then that Array is coerced to a String and used as a separator.
 
-### According a funnily until pre-set or arrogant well cheerful
+> ## Using split()
 
-The Big Oxmox advised her not to do so, because there were thousands of bad
-Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
-didn’t listen. She packed her seven versalia, put her initial into the belt and
-made herself on the way.
+When the string is empty, split() returns an array containing one empty string, rather than an empty array. If the string and separator are both empty strings, an empty array is returned.
 
-1.  So baboon this
-2.  Mounted militant weasel gregariously admonishingly straightly hey
-3.  Dear foresaw hungry and much some overhung
-4.  Rash opossum less because less some amid besides yikes jeepers frenetic
-    impassive fruitlessly shut
+> const myString = ''
+> const splits = myString.split()
+>
+> console.log(splits)
+>
+> // ↪ [""]
 
-When she reached the first hills of the Italic Mountains, she had a last view
-back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet
-Village and the subline of her own road, the Line Lane. Pityful a rhetoric
-question ran over her cheek, then she continued her way. On her way she met a
-copy.
+The following example defines a function that splits a string into an array of strings using separator. After splitting the string, the function logs messages indicating the original string (before the split), the separator used, the number of elements in the array, and the individual array elements.
 
-> The copy warned the Little Blind Text, that where it came from it would have
-> been rewritten a thousand times and everything that was left from its origin
-> would be the word "and" and the Little Blind Text should turn around and
-> return to its own, safe country.
+> function splitString(stringToSplit, separator) {
+> const arrayOfStrings = stringToSplit.split(separator)
+>
+> console.log('The original string is: ', stringToSplit)
+> console.log('The separator is: ', separator)
+>
+> console.log('The array has ', arrayOfStrings.length, ' elements: ', arrayOfStrings.join(' / '))
+> }
 
-But nothing the copy said could convince her and so it didn’t take long until a
-few insidious Copy Writers ambushed her, made her drunk with Longe and Parole
-and dragged her into their agency, where they abused her for their projects
-again and again. And if she hasn’t been rewritten, then they are still using
-her. Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts.
+## Removing spaces from a string
 
-#### Silent delightfully including because before one up barring chameleon
+In the following example, split() looks for zero or more spaces, followed by a semicolon, followed by zero or more spaces—and, when found, removes the spaces and the semicolon from the string. nameList is the array returned as a result of split().
 
-Separated they live in Bookmarksgrove right at the coast of the Semantics, a
-large language ocean. A small river named Duden flows by their place and
-supplies it with the necessary regelialia. It is a paradisematic country, in
-which roasted parts of sentences fly into your mouth.
+> const names = 'Harry Trump ;Fred Barney; Helen Rigby ; Bill Abel ;Chris Hand '
+>
+> console.log(names)
+>
+> const re = /\s*(?:;|\$)\s*/
+> const nameList = names.split(re)
+>
+> console.log(nameList)
 
-Even the all-powerful Pointing has no control about the blind texts it is an
-almost unorthographic life One day however a small line of blind text by the
-name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox
-advised her not to do so, because there were thousands of bad Commas, wild
-Question Marks and devious Semikoli, but the Little Blind Text didn’t listen.
+## Returning a limited number of splits
 
-##### Wherever far wow thus a squirrel raccoon jeez jaguar this from along
+In the following example, split() looks for spaces in a string and returns the first 3 splits that it finds.
 
-She packed her seven versalia, put her initial into the belt and made herself on
-the way. When she reached the first hills of the Italic Mountains, she had a
-last view back on the skyline of her hometown Bookmarksgrove, the headline of
-Alphabet Village and the subline of her own road, the Line Lane. Pityful a
-rhetoric question ran over her cheek, then she continued her way. On her way she
-met a copy.
-
-###### Slapped cozy a that lightheartedly and far
-
-The copy warned the Little Blind Text, that where it came from it would have
-been rewritten a thousand times and everything that was left from its origin
-would be the word "and" and the Little Blind Text should turn around and return
-to its own, safe country. But nothing the copy said could convince her and so it
-didn’t take long until a few insidious Copy Writers ambushed her, made her drunk
-with Longe and Parole and dragged her into their agency, where they abused her
-for their projects again and again.
+> const myString = 'Hello World. How are you doing?'
+> const splits = myString.split(' ', 3)
+>
+> console.log(splits)

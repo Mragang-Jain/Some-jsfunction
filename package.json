@@ -3,9 +3,9 @@
   "private": true,
   "description": "A starter for a blog powered by Gatsby and Markdown",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Mragang Jain <mragangjain9425@yahoo.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://some-jsfunction.netlify.app/"
   },
   "dependencies": {
     "gatsby": "^2.24.79",
@@ -35,14 +35,12 @@
     "prettier": "2.1.2"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "license": "0BSD",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/Shankey9425/Some-jsfunction.git"
   },
   "scripts": {
     "build": "gatsby build",
